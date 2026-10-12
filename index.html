@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101a2b" />
+  <meta name="description" content="LeadLab is a leadership conversation practice tool with structured coaching feedback." />
+  <title>LeadLab — Leadership Practice Lab</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">L</span><span>leadlab<span class="brand-dot">.</span></span></div>
+      <div class="workspace-label">PRACTICE SPACE</div>
+      <button class="nav-item active" data-view="practice"><span>◉</span> Practice room</button>
+      <button class="nav-item" data-view="progress"><span>↗</span> My progress</button>
+      <div class="sidebar-bottom"><div class="avatar">S</div><div><strong>Demo learner</strong><small>Leadership track</small></div></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div><span class="eyebrow">AI LEADERSHIP LAB</span><h1 id="page-title">Practice the conversations that matter.</h1></div><span class="status-pill"><i></i> Interactive prototype</span></header>
+      <section id="practice-view">
+        <div class="intro"><div><h2>Choose a scenario</h2><p>Try a realistic leadership moment, respond in your own words, and reflect on your approach.</p></div><span class="session-tag">SESSION 01 / 03</span></div>
+        <div class="scenario-grid" id="scenario-grid"></div>
+        <div class="practice-layout">
+          <section class="conversation card">
+            <div class="section-heading"><div><span class="eyebrow">ROLE-PLAY</span><h2 id="scenario-title">A difficult feedback conversation</h2></div><span class="live-tag"><i></i> Live practice</span></div>
+            <div class="persona" id="persona"><div class="person-avatar">A</div><div><strong>Alex Morgan</strong><p>Team member · High performer, missed two deadlines</p></div></div>
+            <div class="context-box"><strong>YOUR BRIEF</strong><p id="scenario-brief"></p></div>
+            <div class="chat-log" id="chat-log" aria-live="polite"></div>
+            <div class="composer"><label for="reply" class="sr-only">Your response</label><textarea id="reply" rows="3" placeholder="What would you say? Be yourself — there isn't one perfect answer."></textarea><div class="composer-footer"><span>Tip: Ask a question before jumping to a solution.</span><button class="primary-btn" id="send-btn">Send response ↗</button></div></div>
+            <div class="conversation-actions"><button class="text-btn" id="restart-btn">↻ Restart scenario</button><button class="text-btn" id="next-btn">Next scenario →</button></div>
+          </section>
+          <aside class="coach card">
+            <div class="coach-heading"><div class="coach-icon">✳</div><div><h2>Reflection coach</h2><p>Feedback on your approach</p></div></div>
+            <div class="score-wrap"><div class="score-ring" id="score-ring"><div><strong id="score">—</strong><small>practice signal</small></div></div><p id="score-summary">Your reflection will appear after your first response.</p></div>
+            <div class="feedback-block"><h3><span class="good">＋</span> What’s working</h3><ul id="strengths"><li>Make your first response to begin.</li></ul></div>
+            <div class="feedback-block"><h3><span class="improve">↗</span> Try next</h3><ul id="improvements"><li>Look for empathy, curiosity, clarity, and shared next steps.</li></ul></div>
+            <div class="takeaway"><span>✦ KEY TAKEAWAY</span><p id="takeaway">Strong leadership starts with curiosity. Understand the situation before prescribing a fix.</p></div>
+            <p class="disclaimer">Prototype feedback is heuristic and for practice only — not a validated assessment.</p>
+          </aside>
+        </div>
+      </section>
+      <section id="progress-view" class="hidden">
+        <div class="progress-card card"><span class="eyebrow">YOUR SESSION</span><h2>Practice is progress.</h2><p>This demo keeps your activity in this browser session only.</p><div class="progress-stats"><div><strong id="responses-count">0</strong><span>Responses submitted</span></div><div><strong id="scenarios-count">0</strong><span>Scenarios practiced</span></div><div><strong id="average-score">—</strong><span>Latest practice signal</span></div></div><button class="primary-btn" id="back-practice">Return to practice →</button></div>
+      </section>
+      <footer>LeadLab concept project · Built as a portfolio prototype · No data leaves your browser</footer>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
